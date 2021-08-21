@@ -46,7 +46,7 @@ function generateQuote() {
     function addQuote(){
         quote.innerHTML = quoteArr[x].quote;
         authorName.innerHTML = quoteArr[x].fullName;
-        authorImg.style.background = `url(../images/${quoteArr[x].img}.jpg) no-repeat center`;
+        authorImg.style.background = `url(./images/${quoteArr[x].img}.jpg) no-repeat center`;
         authorImg.style.backgroundSize = "cover";
     }
     
