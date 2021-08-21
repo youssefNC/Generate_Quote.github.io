@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(../images/haeder.jpg);
+  background-size: cover;
+
+  font-family: "Merriweather", serif;
+}
+
+.box {
+  width: 70%;
+  height: 60%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px 1fr 30px;
+  gap: 20px;
+}
+
+.btn-box {
+  display: flex;
+  align-items: center;
+}
+
+.btn-box button {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  text-transform: capitalize;
+  color: #584c36;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-box button::before {
+  content: "";
+  position: absolute;
+  width: 58%;
+  height: 10px;
+  bottom: 0px;
+  left: 0px;
+  background: wheat;
+  z-index: -1;
+  transition: 0.4s;
+}
+
+.btn-box button:hover::before {
+  width: 100%;
+  background: rgb(245, 240, 230);
+}
+
+.quote-box {
+  color: #584c36;
+  order: 2;
+}
+
+.quote-box span svg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: -5px;
+  fill: #584c36;
+}
+
+.quote-box span#quote {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+span#name {
+  order: 3;
+  font-family: "Abril Fatface", cursive;
+  text-align: right;
+  text-transform: capitalize;
+  margin-right: 10px;
+  color: #584c36;
+  font-size: 22px;
+}
+
+#person-img {
+  grid-row: span 3;
+  grid-column: 2;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#person-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: -10%;
+  right: -10%;
+  background: url(../images/paper.jpg);
+  background-size: cover;
+  background-position: bottom;
+  z-index: 1;
+  filter: sepia(1);
+  animation-name: moveDown;
+  animation-duration: 4s;
+}
+
+@media (min-width: 992px) {
+  div.box {
+    width: 50%;
+  }
+}
+@media (max-width: 991px) {
+  div.box {
+    width: 70%;
+    height: 70%;
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  #person-img {
+    grid-column: 1;
+    position: absolute;
+    z-index: -1;
+  }
+
+  #person-img::before {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    background: rgba(245, 222, 179, 0.5);
+    filter: none;
+  }
+
+  .btn-box,
+  .quote-box {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .quote-box span#quote {
+    text-shadow: 0px 2px 1px white;
+  }
+}
